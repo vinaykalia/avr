@@ -16,7 +16,21 @@ void USART_send(unsigned char data);
 void USART_putstring(char* StringPtr);
  
 char String[]="Hello World!\n\r";    //String[] is in fact an array but when we put the text between the " " symbols the compiler threats it as a String and automatically puts the null termination character in the end of the text
- 
+
+/* Test Tx and Rx both. */
+/*int main(void)
+{
+	char var;
+	USART_init();
+	while(1) {
+		var = USART_receive();
+		var = var - 32;
+		USART_send(var);
+	}
+	return 0;
+}*/
+
+/* Test just the Tx. */
 int main(void)
 {
 	USART_init();        //Call the USART initialization code
